@@ -12,6 +12,10 @@ public class DeansList implements ICollection {
         this.students = new ArrayList<Student>();
     }
 
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
     public boolean add(Object newItem) {
         if (newItem instanceof Student) {
             Student studentToAdd = (Student) newItem;
@@ -45,7 +49,5 @@ public class DeansList implements ICollection {
         }
         return students.get(index);
     }
-
-
 
 }
