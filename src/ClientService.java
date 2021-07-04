@@ -27,6 +27,10 @@ public class ClientService implements ICollection {
         this.cap = cap;
     }
 
+    public ArrayList<Client> getClients() {
+        return clients;
+    }
+
     public boolean add(Object newItem) {
         if (newItem instanceof Client && clients.size() < cap) {
             Client clientToAdd = (Client) newItem;

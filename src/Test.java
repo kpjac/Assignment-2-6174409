@@ -10,5 +10,17 @@ public class Test {
         for (Student s : dl.getStudents()) {
             System.out.println(s);
         }
+        ClientService cs = new ClientService(10);
+        Client c1 = new Client("Jake");
+        Client c2 = new Client("Merrick");
+        Client c3 = new Client("Esteban");
+        cs.add(c2);
+        cs.add(c3);
+        cs.add(c1);
+        System.out.println("Next client: " + cs.getNext());
+        System.out.println("Remaining clients to serve:");
+        for (Client c : cs.getClients()) {
+            System.out.println(c);
+        }
     }
 }
