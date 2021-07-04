@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class DeansList {
 
-    ArrayList<Student> students;
+    private ArrayList<Student> students;
 
     public DeansList(ArrayList<Student> students) {
         this.students = students;
