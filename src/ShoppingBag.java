@@ -17,6 +17,10 @@ public class ShoppingBag implements ICollection{
         numItems = 0;
     }
 
+    public int getNumItems() {
+        return numItems;
+    }
+
     public boolean add(Object newItem) {
         if (numItems < items.length && newItem instanceof BagItem) {
             BagItem toAdd = (BagItem) newItem;

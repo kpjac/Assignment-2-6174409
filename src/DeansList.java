@@ -38,7 +38,7 @@ public class DeansList implements ICollection {
             return false;
     }
 
-    public Student highestGpa() {
+    private Student highestGpa() {
         int index = 0;
         double max = 0.0;
         for (int i = 0; i < students.size(); i++) {
