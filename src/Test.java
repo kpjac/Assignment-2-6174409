@@ -36,8 +36,8 @@ public class Test {
         System.out.println("First item out of bag: " + sb.getNext());
         System.out.println("Remaining item count: " + sb.getNumItems());
         System.out.println("Remaining items:");
-        for (BagItem i : sb.getItems()) {
-            System.out.println(i);
+        for (int i = 0; i < sb.getNumItems(); i++) {
+            System.out.println(sb.getItems()[i]);
         }
     }
 }
