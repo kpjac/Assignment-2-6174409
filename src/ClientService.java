@@ -1,7 +1,7 @@
 /**
  * Used to track clients walking into a business.
  *
- * Usually, the client that walks in first is the first client to be served.
+ * <p>Usually, the client that walks in first is the first client to be served.</p>
  */
 
 import java.util.ArrayList;
@@ -14,9 +14,9 @@ public class ClientService implements ICollection {
     /**
      * Constructor setting client service capacity to passed value.
      *
-     * Throws exception if a negative value or zero is passed.
+     * <p>Throws exception if a negative value or zero is passed.</p>
      *
-     * @param cap
+     * @param cap the capacity of the client service
      */
     public ClientService(int cap) {
         if (cap <= 0) {
@@ -43,10 +43,10 @@ public class ClientService implements ICollection {
     /**
      * Setter for capacity throws same exception as constructor.
      *
-     * If capacity is lowered, any clients already in line for service but
-     * over new capacity will still be served.
+     * <p>If capacity is lowered, any clients already in line for service but
+     * over new capacity will still be served.</p>
      *
-     * @param cap
+     * @param cap the capacity of the client service
      */
     public void setCap(int cap) {
         if (cap <= 0) {
@@ -63,9 +63,9 @@ public class ClientService implements ICollection {
     /**
      * Implementation of add(newItem) for client service.
      *
-     * The size of the queue must be under capacity.
+     * <p>The size of the queue must be under capacity.</p>
      *
-     * @param newItem
+     * @param newItem from signature of abstract method
      * @return true if a client is added, false if none is added
      */
     public boolean add(Object newItem) {
@@ -80,7 +80,7 @@ public class ClientService implements ICollection {
     /**
      * Implementation of getNext()
      *
-     * Removes the client at the front of the line (at the beginning of the clients ArrayList).
+     * <p>Removes the client at the front of the line (at the beginning of the clients ArrayList).</p>
      *
      * @return the next client
      */

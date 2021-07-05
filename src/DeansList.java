@@ -10,9 +10,9 @@ public class DeansList implements ICollection {
     private ArrayList<Student> students;
 
     /**
-     * Parameterized constructor removes any students with GPA < 3.7
+     * Parameterized constructor removes any students with GPA less than 3.7
      *
-     * @param students, pre-existing list of students
+     * @param students pre-existing list of students
      */
     public DeansList(ArrayList<Student> students) {
         this.students = students;
@@ -37,9 +37,9 @@ public class DeansList implements ICollection {
     /**
      * Implementation of add(newItem) method for dean's list
      *
-     * Checks if the student to add has a GPA of at least 3.7.
+     * <p>Checks if the student to add has a GPA of at least 3.7.</p>
      *
-     * @param newItem
+     * @param newItem from signature of abstract method
      * @return true if a student is added, false if none is added
      */
     public boolean add(Object newItem) {
@@ -58,8 +58,8 @@ public class DeansList implements ICollection {
     /**
      * Implementation of getNext() method for dean's list
      *
-     * This method will get students from the dean's list in order of GPA,
-     * starting with the highest.
+     * <p>This method will get students from the dean's list in order of GPA,
+     * starting with the highest.</p>
      *
      * @return the next student
      */
