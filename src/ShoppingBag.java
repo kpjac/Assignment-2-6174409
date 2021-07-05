@@ -17,6 +17,10 @@ public class ShoppingBag implements ICollection{
         numItems = 0;
     }
 
+    public BagItem[] getItems() {
+        return items;
+    }
+
     public int getNumItems() {
         return numItems;
     }
@@ -34,7 +38,9 @@ public class ShoppingBag implements ICollection{
     public Object getNext() {
         if (items.length > 0) {
             numItems--;
-            return items[numItems];
+            BagItem next = items[numItems];
+            items[numItems] = null;
+            return next;
         } else
             return false;
     }
