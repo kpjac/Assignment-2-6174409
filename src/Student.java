@@ -1,3 +1,7 @@
+/**
+ * Represents an individual student.
+ */
+
 public class Student {
 
     private String name;

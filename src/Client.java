@@ -1,3 +1,7 @@
+/**
+ * Represents an individual client.
+ */
+
 public class Client {
     private String name;
 

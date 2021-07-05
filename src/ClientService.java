@@ -1,3 +1,9 @@
+/**
+ * Used to track clients walking into a business.
+ *
+ * Usually, the client that walks in first is the first client to be served.
+ */
+
 import java.util.ArrayList;
 
 public class ClientService implements ICollection {
@@ -5,6 +11,13 @@ public class ClientService implements ICollection {
     private ArrayList<Client> clients;
     private int cap;
 
+    /**
+     * Constructor setting client service capacity to passed value.
+     *
+     * Throws exception if a negative value or zero is passed.
+     *
+     * @param cap
+     */
     public ClientService(int cap) {
         if (cap <= 0) {
             throw new IllegalArgumentException("Capacity cannot be a negative number or zero.");
@@ -14,6 +27,10 @@ public class ClientService implements ICollection {
         }
     }
 
+    /**
+     * Default constructor sets capacity to 1.
+     *
+     */
     public ClientService() {
         clients = new ArrayList<Client>();
         this.cap = 1;
@@ -23,14 +40,34 @@ public class ClientService implements ICollection {
         return cap;
     }
 
+    /**
+     * Setter for capacity throws same exception as constructor.
+     *
+     * If capacity is lowered, any clients already in line for service but
+     * over new capacity will still be served.
+     *
+     * @param cap
+     */
     public void setCap(int cap) {
-        this.cap = cap;
+        if (cap <= 0) {
+            throw new IllegalArgumentException("Capacity cannot be a negative number or zero.");
+        } else {
+            this.cap = cap;
+        }
     }
 
     public ArrayList<Client> getClients() {
         return clients;
     }
 
+    /**
+     * Implementation of add(newItem) for client service.
+     *
+     * The size of the queue must be under capacity.
+     *
+     * @param newItem
+     * @return true if a client is added, false if none is added
+     */
     public boolean add(Object newItem) {
         if (newItem instanceof Client && clients.size() < cap) {
             Client clientToAdd = (Client) newItem;
@@ -40,6 +77,13 @@ public class ClientService implements ICollection {
             return false;
     }
 
+    /**
+     * Implementation of getNext()
+     *
+     * Removes the client at the front of the line (at the beginning of the clients ArrayList).
+     *
+     * @return the next client
+     */
     public Object getNext() {
         if (clients.size() > 0) {
             Client next = clients.get(0);

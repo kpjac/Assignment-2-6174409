@@ -1,3 +1,7 @@
+/**
+ * Represents an individual shopping bag item.
+ */
+
 public class BagItem {
     private String name;
     private int upc;
