@@ -65,9 +65,7 @@ public class DeansList implements ICollection {
      */
     public Object getNext() {
         if (students.size() > 0) {
-            Student next = this.highestGpa();
-            students.remove(this.highestGpa());
-            return next;
+            return students.remove(this.highestGpa());
         } else
             return false;
     }

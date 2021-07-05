@@ -86,9 +86,7 @@ public class ClientService implements ICollection {
      */
     public Object getNext() {
         if (clients.size() > 0) {
-            Client next = clients.get(0);
-            clients.remove(0);
-            return next.getName();
+            return clients.remove(0);
         } else
             return false;
     }
